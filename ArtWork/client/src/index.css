@@ -61,3 +61,7 @@ a{
   align-items: center;
   justify-content: center;
 }
+
+ul{
+  list-style: none;
+}

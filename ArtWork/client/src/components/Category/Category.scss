@@ -1,0 +1,40 @@
+.category{
+    width: 30%;
+    
+    // aspect-ratio: 16/9;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index:4;
+    cursor: pointer;
+    .Category-content{
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        transition: 0.2s ease;
+        justify-content: center;
+
+        .heading{
+            color: #ffffff;
+        }
+
+        .cat-img{
+            // z-index: -10;
+            width: 100%;
+            height: 60%;
+        
+           
+        }
+
+        &:hover{
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            transition: 0.2s ease;
+        }
+
+     
+    }
+   
+    
+   
+
+}

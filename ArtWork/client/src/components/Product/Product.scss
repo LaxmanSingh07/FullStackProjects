@@ -1,0 +1,45 @@
+.Product{
+    cursor: pointer;
+    width: 23%;
+    .product-container
+    {
+        height: 350px;
+        width: 100%;
+        border:1px solid rgba($color: (#000000), $alpha: 0.1);
+        position: relative;
+            .img-container{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+
+            }
+            img{
+                margin-top: 50px;
+                width:95%;
+                height:95%;
+                object-fit: contain;
+                transform: scale(0.9);
+                transition:  0.2s ease-in-out;
+            }
+            .proudct-info{
+                text-align: center;
+                
+                .price{
+                    color:var(--primary-text-color);
+                    font-weight: 600;
+                    margin-block: 16px;
+                }
+                
+            }
+
+    }
+    &:hover #image{
+       
+                transform: scale(1);
+            
+        }
+    
+    
+}

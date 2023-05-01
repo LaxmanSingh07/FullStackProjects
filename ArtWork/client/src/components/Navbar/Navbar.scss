@@ -56,4 +56,19 @@
             }
         }
     }
+    @media screen and (max-width: 768px) {
+        .Navbar{
+            .nav-container{
+                display: none;
+            .nav-left{
+
+            }
+            .nav-center{
+                position: static;
+                transform: translateX(0);
+            }
+
+        }
+        }
+    }
 }
