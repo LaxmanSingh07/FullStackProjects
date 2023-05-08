@@ -1,7 +1,7 @@
 const app=require("./app");
 const dotenv=require("dotenv");
 //config 
-dotenv.config({path:"backend/config/.env"});
+dotenv.config();
 const port=process.env.PORT || 6001;
 //database connection
 const connect=require("./config/database");
