@@ -3,7 +3,9 @@ const sendEmail=async(options)=>{
       //we use the email testing service 
       
       const transporter=nodeMailer.createTransport({
+        host:process.env.SMPT_HOST,
         service:process.env.SMPT_SERVICE,
+        port:process.env.SMPT_PORT,
         auth:{
             user:process.env.SMPT_MAIL, // simple mail transfter protocol 
             pass:process.env.SMPT_PASSWORD
@@ -11,7 +13,7 @@ const sendEmail=async(options)=>{
       })
 
       const mailOptions={
-        from:"",
+        from:"Laxman Singh <hello@laxman.io>",
         to:options.email,
         subject:options.subject,
         text:options.message,
