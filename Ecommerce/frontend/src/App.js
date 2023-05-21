@@ -5,6 +5,8 @@ import Footer from "./component/layout/Footer/Footer.js";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import WebFont from "webfontloader";
 import Home from "./component/Home/Home.js";
+// import Loader from "./component/layout/Loader/Loader.js";
+import ProductDetails from "./component/Produc/ProductDetails";
 
 const App = () => {
   React.useEffect(() => {
@@ -19,6 +21,8 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home/>} />
+        {/* <Route path="/temp" element={<Loader/>} /> */}
+        <Route path="/product/:id" element={<ProductDetails/>} />
         </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,3 @@
+REDUX IS USED TO MANGE THE STAGES OF THE APPLICATION
+
+with the help of the 
