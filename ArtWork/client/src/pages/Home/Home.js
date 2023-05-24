@@ -5,8 +5,6 @@ import Category from '../../components/Category/Category'
 import Product from '../../components/Product/Product'
 import { categories,products } from '../../data'
 function Home() {
- 
-
 
   return (
     <div className='Home'>
