@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* chrom ,safar, edge ,opers*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* firefox */
+
+input[type="number"] {
+  -moz-appearance: textfield; // this is not stand
+
+  //you can use something like 
+
+  
+}

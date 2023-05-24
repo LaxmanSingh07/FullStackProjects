@@ -2,10 +2,10 @@ import {
   ALL_PRODUCTS_REQUEST,
   ALL_PRODUCTS_SUCCESS,
   ALL_PRODUCTS_FAIL,
-    CLEAR_ERRORS,
   PRODUCT_DETAILS_FAIL,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_REQUEST,
+  CLEAR_ERRORS,
 } from "../constants/productConstants";
 
 export const productReducer = (state = { products: [] }, action) => {

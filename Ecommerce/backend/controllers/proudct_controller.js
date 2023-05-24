@@ -7,7 +7,7 @@ const ApiFeatures = require("../utils/api-features");
 exports.createProduct = catchAsyncError(async (req, res, next) => {
   req.body.user = req.user.id;
   const product = await Product.create(req.body);
-  console.log(product)
+  console.log(product);
   res.status(201).json({
     success: true,
     product,
@@ -15,8 +15,9 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
 });
 
 //GET ALL PRODUCTS
-exports.getAllProducts = catchAsyncError(async (req, res) => {
+exports.getAllProducts = catchAsyncError(async (req, res, next) => {
   // console.log(req.query);
+
   const productsCount = await Product.countDocuments();
   const resultPerPage = 8;
   const apiFeature = new ApiFeatures(Product.find(), req.query)
@@ -89,37 +90,36 @@ exports.createProductReview = catchAsyncError(async (req, res, nest) => {
     comment,
   };
 
-  console.log(rating,comment,productId);
+  console.log(rating, comment, productId);
   const product = await Product.findById(productId);
   const isReviewed = product.reviews.find((rev) => {
-      rev.user.toString() === req.user._id.toString();
+    rev.user.toString() === req.user._id.toString();
+  });
+
+  if (isReviewed) {
+    product.reviews.forEach((rev) => {
+      if (rev.user.toString() === req.user._id.toString())
+        (rev.rating = rating), (rev.comment = comment);
     });
-    
-    if (isReviewed) {
-        product.reviews.forEach((rev) => {
-            if (rev.user.toString() === req.user._id.toString())
-            (rev.rating = rating), (rev.comment = comment);
-        });
-    } else {
-        product.reviews.push(review);
-        product.numOfReviews = product.reviews.length;
-    }
+  } else {
+    product.reviews.push(review);
+    product.numOfReviews = product.reviews.length;
+  }
   let counter = 0;
   product.reviews.forEach((rev) => {
-      counter += rev.rating;
-    }) 
-    product.ratings =counter/ product.reviews.length;
+    counter += rev.rating;
+  });
+  product.ratings = counter / product.reviews.length;
 
-    await product.save({
-        validateBeforeSave:false
-    })
+  await product.save({
+    validateBeforeSave: false,
+  });
 
-    res.status(200).json({
-        success:true,
-        message:"Review Done"
-    })
+  res.status(200).json({
+    success: true,
+    message: "Review Done",
+  });
 });
-
 
 //Get All Reviews of a product
 exports.getProductReviews = catchAsyncError(async (req, res, next) => {

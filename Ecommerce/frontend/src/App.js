@@ -6,7 +6,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import WebFont from "webfontloader";
 import Home from "./component/Home/Home.js";
 // import Loader from "./component/layout/Loader/Loader.js";
-import ProductDetails from "./component/Produc/ProductDetails";
+import "./App.scss"
+import ProductDetails from "./component/Product/ProductDetails.js";
 
 const App = () => {
   React.useEffect(() => {
