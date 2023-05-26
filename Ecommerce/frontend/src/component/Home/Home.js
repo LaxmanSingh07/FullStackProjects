@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 // import { Link } from 'react-router-dom'
 import "./Home.scss";
-import Product from "./Product.js";
+import Product from "./ProductCard.js";
 import { CgMouse } from "react-icons/cg";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
