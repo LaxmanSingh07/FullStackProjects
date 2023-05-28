@@ -8,23 +8,25 @@ import ProductCard from "../Home/ProductCard";
 const Products = () => {
   const dispatch = useDispatch();
 
-  const { Products, loading, error, productsCount } = useSelector(
-    (state) => state.Products
+  const { products, loading, error, productsCount } = useSelector(
+    (state) => state.product
   );
+  console.log(products);
   useEffect(() => {
     dispatch(getProduct());
   }, [dispatch]);
-  return <>{loading ? <Loader /> :
+  return (<>{loading ?( <Loader />) :
    <>
     <h2 className="prouctsHeading">Products</h2>
     <div className="products">
-        {Products.map((product)=>{
+        {products &&products.map((product)=>(
             <ProductCard key={product.id} product={product}/>
-        })}
+        ))}
     </div>
   </>}
   
-  </>;
+  </>
+  );
 };
 
 export default Products;
