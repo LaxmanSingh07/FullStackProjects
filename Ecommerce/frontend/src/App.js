@@ -9,8 +9,10 @@ import Products from "./component/Product/Products.js"
 // import Loader from "./component/layout/Loader/Loader.js";
 import "./App.scss"
 import ProductDetails from "./component/Product/ProductDetails.js";
+import Search from "./component/Product/Search.js"
 
 const App = () => {
+ 
   React.useEffect(() => {
     WebFont.load({
       google: {
@@ -26,6 +28,8 @@ const App = () => {
         {/* <Route path="/temp" element={<Loader/>} /> */}
         <Route path="/product/:id" element={<ProductDetails/>} />
         <Route path="/products" element={<Products/>} />
+        <Route path="/products/:keyword" element={<Products/>} />
+        <Route path="/Search" element={<Search/>}  />
         </Routes>
       <Footer />
     </Router>
