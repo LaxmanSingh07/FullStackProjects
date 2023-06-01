@@ -39,7 +39,7 @@
     &:first-child{
         border-radius: 5px 0 0 5px;
     }
-    &::last-child {
+    &:last-child {
         border-radius: 0 5px 5px 0;
   }
 }
@@ -60,7 +60,7 @@
     color: rgb(0, 0, 0);
   }
   
-  .pageItemActive {
+  .page-item-active {
     background-color: tomato;
     color: white;
   }

@@ -10,6 +10,7 @@ import Products from "./component/Product/Products.js"
 import "./App.scss"
 import ProductDetails from "./component/Product/ProductDetails.js";
 import Search from "./component/Product/Search.js"
+import LoginSignUp from "./component/User/LoginSignUp.js";
 
 const App = () => {
  
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/products" element={<Products/>} />
         <Route path="/products/:keyword" element={<Products/>} />
         <Route path="/Search" element={<Search/>}  />
+        <Route path="/login" element={<LoginSignUp/>}/>
         </Routes>
       <Footer />
     </Router>
